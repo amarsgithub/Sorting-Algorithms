@@ -40,12 +40,13 @@ public:
 */
 
     void Swap(int *a, int *b);
-
+    bool isSorted();
+    int FindIndexMin(int *array, int size);
 
     // O(n^2) sorting algorithms:
     void BubbleSort();
-    void InsertionSort();
     void SelectionSort();
+    void InsertionSort();
 
     // Other sorting algorithms:
     void BucketSort();

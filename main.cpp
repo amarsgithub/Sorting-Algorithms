@@ -18,16 +18,54 @@ int main(int argc, char **argv)
     // The following function creates the array inside the algorithmObject object
     // and assigns random values to all of the elements
     algorithmObject.Randomize();
-    algorithmObject.PrintList();
+
+    // =========================================================================
+    //                             Bubble Sort
+    // =========================================================================
 
     {
+        cout << "Testing Bubble Sort " << endl;
         SimpleTimer myTimer("bucket sort");
         algorithmObject.BubbleSort();
     }
 
-    algorithmObject.PrintList();
-    // algorithmObject.randomize(numElements);
+    if (algorithmObject.isSorted())
+        cout << "Bubble sort worked successfully." << endl;
+    else
+        cout << "Bubble sort failed." << endl;
 
+
+    // =========================================================================
+    //                             Selection Sort
+    // =========================================================================
+
+    algorithmObject.Randomize();
+    cout << endl << endl;
+
+    {
+        cout << "Testing Selection Sort " << endl;
+        SimpleTimer myTimer("selection sort");
+        algorithmObject.SelectionSort();
+    }
+
+    if (algorithmObject.isSorted())
+        cout << "Selection sort worked successfully." << endl;
+    else
+        cout << "Selection sort failed." << endl;
+
+
+    // =========================================================================
+    //                             Insertion Sort
+    // =========================================================================
+
+    algorithmObject.Randomize();
+    cout << endl << endl;
+
+    {
+        cout << "Testing Insertion Sort " << endl;
+        SimpleTimer myTimer("insertion sort");
+        algorithmObject.InsertionSort();
+    }
 
     return 0;
 }

@@ -1,5 +1,6 @@
 #include "SortingAlgorithms.h"
 #include <time.h>
+#include <limits.h>
 #define NUMBERS_PER_LINE_TO_PRINT 5
 
 // Returns the count
@@ -70,8 +71,30 @@ void SortingAlgorithms::Swap(int *a, int *b)
     *b = temp;
 }
 
+bool SortingAlgorithms::isSorted()
+{
+    for (int i = 0; i < count; i++)
+        if (arr[i] > arr[i + 1])
+            return false;
+
+    return true;
+}
+
+int SortingAlgorithms::FindIndexMin(int *array, int size)
+{
+    int indexMin = 0;
+    int minSoFar = INT_MAX;
+    for (int i = 0; i < size; i++)
+        if (array[i] < minSoFar)
+        {
+            indexMin = i;
+            minSoFar = array[i];
+        }
+    return indexMin;
+}
+
 // |===========================================================================|
-// |                                 Bubble Sort                               |
+// |                               arr  Bubble Sort                               |
 // |===========================================================================|
 void SortingAlgorithms::BubbleSort()
 {
@@ -90,5 +113,18 @@ void SortingAlgorithms::BubbleSort()
             break;
         else
             swappedSomething = false;
+    }
+}
+
+void SortingAlgorithms::SelectionSort()
+{
+    int minIndex = 0;
+    for (int i = 0; i < count; i++)
+    {
+        minIndex = i;
+        for (int j = i + 1; j < count; j++)
+            if (arr[j] < arr[minIndex])
+                minIndex = j;
+        Swap(arr + i, arr + minIndex);
     }
 }
