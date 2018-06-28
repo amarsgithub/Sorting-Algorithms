@@ -18,6 +18,7 @@ int main(int argc, char **argv)
     // The following function creates the array inside the algorithmObject object
     // and assigns random values to all of the elements
     algorithmObject.Randomize();
+    algorithmObject.PrintList();
 
     {
         SimpleTimer myTimer("bucket sort");

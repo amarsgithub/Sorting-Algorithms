@@ -1,6 +1,6 @@
 #include "SortingAlgorithms.h"
 #include <time.h>
-#define NUMBERS_PER_LINE 5
+#define NUMBERS_PER_LINE_TO_PRINT 5
 
 // Returns the count
 void SortingAlgorithms::SetCount(int count)
@@ -18,10 +18,11 @@ void SortingAlgorithms::PrintList()
 
     for (int i = 0; i < count; i++)
     {
-        cout << arr[i] << " | ";
-        if (numbersPrintedSoFar == NUMBERS_PER_LINE)
+        cout << "  " << arr[i] << "\t|";
+        numbersPrintedSoFar++;
+        if (numbersPrintedSoFar == NUMBERS_PER_LINE_TO_PRINT)
         {
-            cout << endl;
+            cout << "\n";
             numbersPrintedSoFar = 0;
         }
 
@@ -53,5 +54,9 @@ void SortingAlgorithms::Randomize()
         arr = new int[count];
     }
 
+    srand(time(NULL));
+
+    for (int i = 0; i < count; i++)
+        arr[i] = rand() % 1000 + 1;
 
 }
