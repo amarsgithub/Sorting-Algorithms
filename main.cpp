@@ -2,7 +2,7 @@
 
 int main(int argc, char **argv)
 {
-    SortingAlgorithms testVariable;
+    SortingAlgorithms algorithmObject;
 
     // If the user has entered less than 2 command line arguments:
     if (argc < 2)
@@ -13,19 +13,19 @@ int main(int argc, char **argv)
     }
 
     // Converts the second input argument to an int:
-    testVariable.SetCount(atoi(argv[1]));
+    algorithmObject.SetCount(atoi(argv[1]));
 
-    // The following function creates the array inside the testVariable object
+    // The following function creates the array inside the algorithmObject object
     // and assigns random values to all of the elements
-    testVariable.Randomize();
+    algorithmObject.Randomize();
 
     {
-        SimpleTimer myTimer("Bucket Sort: ");
-
+        SimpleTimer myTimer("bucket sort");
+        algorithmObject.BucketSort();
     }
 
-    testVariable.PrintList();
-    // testVariable.randomize(numElements);
+    algorithmObject.PrintList();
+    // algorithmObject.randomize(numElements);
 
 
     return 0;

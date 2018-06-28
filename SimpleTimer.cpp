@@ -19,5 +19,5 @@ SimpleTimer::~SimpleTimer()
 {
     end = highResClock::now();
     elapsed = end - start;
-    cout << "Elapsed time for" << name << " "<< elapsed.count() << " seconds\n";
+    cout << "Elapsed time for " << name << ": "<< elapsed.count() << " seconds\n";
 }

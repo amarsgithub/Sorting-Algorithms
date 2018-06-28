@@ -10,6 +10,10 @@ private:
     int count;
 public:
 
+    // Default constructor & Destructor
+    SortingAlgorithms();
+    ~SortingAlgorithms();
+
     // General getters/setters
     void SetCount(int count);
 
@@ -36,7 +40,7 @@ public:
 */
 
     // O(n^2) sorting algorithms:
-    void BubbleSort(int *arr, int length);
+    void BubbleSort();
     void InsertionSort();
     void SelectionSort();
 

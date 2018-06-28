@@ -1,4 +1,5 @@
 #include "SortingAlgorithms.h"
+#include <time.h>
 #define NUMBERS_PER_LINE 5
 
 // Returns the count
@@ -7,16 +8,14 @@ void SortingAlgorithms::SetCount(int count)
     this->count = count;
 }
 
-// Clears the array and then randomizes it:
-void SortingAlgorithms::Randomize()
-{
-
-}
-
 // Prints the list:
 void SortingAlgorithms::PrintList()
 {
     int numbersPrintedSoFar = 0;
+
+    if (arr == nullptr)
+        return;
+
     for (int i = 0; i < count; i++)
     {
         cout << arr[i] << " | ";
@@ -40,6 +39,19 @@ SortingAlgorithms::SortingAlgorithms()
 SortingAlgorithms::~SortingAlgorithms()
 {
     if (this->arr != nullptr)
-        delete[] array;
+        delete[] arr;
+}
+
+// Clears the array and then randomizes it:
+void SortingAlgorithms::Randomize()
+{
+    if (arr == nullptr)
+        arr = new int[count];
+    else
+    {
+        delete[] arr;
+        arr = new int[count];
+    }
+
 
 }
