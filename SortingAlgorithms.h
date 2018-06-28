@@ -6,9 +6,11 @@ class SortingAlgorithms
 {
 private:
     int *arr;
+    int count;
 public:
 
-    // Type of sorting algorithms that need to be implemented:
+    // General getters/setters
+    void setCount(int count);
 
 /*
     |--------------------------------------------------------------------------|
@@ -26,7 +28,6 @@ public:
     |--------------------------------------------------------------------------|
 */
 
-
     // O(n^2) sorting algorithms:
     void BubbleSort(int *arr, int length);
     void InsertionSort();
@@ -41,5 +42,9 @@ public:
 
     // Best-case:
     void QuickSort();
+
+    // The below function is a general function that clears the array if it's
+    // got stuff in it and then gives in random values to the array.
+    void randomize(int numElements);
 
 };
