@@ -39,6 +39,9 @@ public:
     |--------------------------------------------------------------------------|
 */
 
+    void Swap(int *a, int *b);
+
+
     // O(n^2) sorting algorithms:
     void BubbleSort();
     void InsertionSort();

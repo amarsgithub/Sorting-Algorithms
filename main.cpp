@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 
     {
         SimpleTimer myTimer("bucket sort");
-        algorithmObject.BucketSort();
+        algorithmObject.BubbleSort();
     }
 
     algorithmObject.PrintList();
