@@ -28,7 +28,7 @@ public:
 
 
     // O(n^2) sorting algorithms:
-    void BubbleSort();
+    void BubbleSort(int *arr, int length);
     void InsertionSort();
     void SelectionSort();
 
