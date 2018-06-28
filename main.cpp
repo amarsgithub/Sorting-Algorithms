@@ -13,17 +13,18 @@ int main(int argc, char **argv)
     }
 
     // Converts the second input argument to an int:
-    testVariable.count.setCount(atoi(argv[1]);
+    testVariable.SetCount(atoi(argv[1]));
 
     // The following function creates the array inside the testVariable object
     // and assigns random values to all of the elements
-    testVariable.randomize();
+    testVariable.Randomize();
 
     {
         SimpleTimer myTimer("Bucket Sort: ");
 
     }
 
+    testVariable.PrintList();
     // testVariable.randomize(numElements);
 
 

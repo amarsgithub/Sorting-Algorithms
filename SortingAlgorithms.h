@@ -1,4 +1,5 @@
 #pragma once
+#include "SimpleTimer.h"
 #include <iostream>
 using namespace std;
 
@@ -10,7 +11,13 @@ private:
 public:
 
     // General getters/setters
-    void setCount(int count);
+    void SetCount(int count);
+
+    // Clears the array and randomizes it based on the input size:
+    void Randomize();
+
+    // Prints the array:
+    void PrintList();
 
 /*
     |--------------------------------------------------------------------------|
