@@ -94,7 +94,7 @@ int SortingAlgorithms::FindIndexMin(int *array, int size)
 }
 
 // |===========================================================================|
-// |                               arr  Bubble Sort                               |
+// |                               Bubble Sort                                 |
 // |===========================================================================|
 void SortingAlgorithms::BubbleSort()
 {
@@ -116,6 +116,11 @@ void SortingAlgorithms::BubbleSort()
     }
 }
 
+
+// |===========================================================================|
+// |                            Selection Sort                                 |
+// |===========================================================================|
+
 void SortingAlgorithms::SelectionSort()
 {
     int minIndex = 0;
@@ -128,6 +133,10 @@ void SortingAlgorithms::SelectionSort()
         Swap(arr + i, arr + minIndex);
     }
 }
+
+// |===========================================================================|
+// |                            Insertion Sort                                 |
+// |===========================================================================|
 
 void SortingAlgorithms::InsertionSort()
 {
