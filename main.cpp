@@ -24,7 +24,7 @@ int main(int argc, char **argv)
     // =========================================================================
 
     {
-        cout << "Testing Bubble Sort " << endl;
+        cout << "Testing Bubble Sort..." << endl;
         SimpleTimer myTimer("bucket sort");
         algorithmObject.BubbleSort();
     }
@@ -43,7 +43,7 @@ int main(int argc, char **argv)
     algorithmObject.Randomize();
 
     {
-        cout << "Testing Selection Sort " << endl;
+        cout << "Testing Selection Sort..." << endl;
         SimpleTimer myTimer("selection sort");
         algorithmObject.SelectionSort();
     }
@@ -60,7 +60,7 @@ int main(int argc, char **argv)
     cout << endl << endl;
     algorithmObject.Randomize();
     {
-        cout << "Testing Insertion Sort " << endl;
+        cout << "Testing Insertion Sort..." << endl;
         SimpleTimer myTimer("insertion sort");
         algorithmObject.InsertionSort();
     }
@@ -77,8 +77,8 @@ int main(int argc, char **argv)
     cout << endl << endl;
     algorithmObject.Randomize();
     {
-        cout << "Testing Merge Sort " << endl;
-        SimpleTimer myTimer("Merge sort");
+        cout << "Testing Merge Sort..." << endl;
+        SimpleTimer myTimer("merge sort");
         algorithmObject.MergeSort();
     }
     if (algorithmObject.isSorted())
