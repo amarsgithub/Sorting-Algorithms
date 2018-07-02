@@ -74,5 +74,17 @@ int main(int argc, char **argv)
     // =========================================================================
 
 
+    cout << endl << endl;
+    algorithmObject.Randomize();
+    {
+        cout << "Testing Merge Sort " << endl;
+        SimpleTimer myTimer("Merge sort");
+        algorithmObject.MergeSort();
+    }
+    if (algorithmObject.isSorted())
+        cout << "Merge sort worked successfully." << endl;
+    else
+        cout << "Merge sort failed." << endl;
+
     return 0;
 }

@@ -158,32 +158,31 @@ void SortingAlgorithms::MergeSortHelper(int *arr, int lo, int hi)
         return;
 
     // Recursive calls
-    MergeSort(arr, lo, mid);
-    MergeSort(arr, mid + 1, hi);
+    MergeSortHelper(arr, lo, mid);
+    MergeSortHelper(arr, mid + 1, hi);
 
     aux = new int[hi - lo + 1];
 
     while (i <= mid || j <= hi)
     {
         if (i > mid)
-            aux[k++] = array[j++];
+            aux[k++] = arr[j++];
         else if (j > hi)
-            aux[k++] = array[i++];
-        else if (array[i] < array[j])
-            aux[k++] = array[i++];
+            aux[k++] = arr[i++];
+        else if (arr[i] < arr[j])
+            aux[k++] = arr[i++];
         else
-            aux[k++] = array[j++];
+            aux[k++] = arr[j++];
     }
-    
-    for (i = lo; i <= hi; i++)
-        array[i] = aux[i - lo];
 
-    delete[] aux;    
+    for (i = lo; i <= hi; i++)
+        arr[i] = aux[i - lo];
+
+    delete[] aux;
 }
 
 void SortingAlgorithms::MergeSort()
 {
     // Recursive call to help with merge sort:
-    MergeSortHelper(arr, 0, count - 1); 
+    MergeSortHelper(arr, 0, count - 1);
 }
-
