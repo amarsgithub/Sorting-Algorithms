@@ -58,7 +58,7 @@ void SortingAlgorithms::Randomize()
     }
 
     srand(time(NULL));
-
+    cout << "Seeding random number generator and creating new array" << endl;
     for (int i = 0; i < count; i++)
         arr[i] = rand() % 1000 + 1;
 
@@ -128,3 +128,62 @@ void SortingAlgorithms::SelectionSort()
         Swap(arr + i, arr + minIndex);
     }
 }
+
+void SortingAlgorithms::InsertionSort()
+{
+    int x, y, z;
+
+    for (z = 1; z < count; z++)
+    {
+        y = arr[z];
+
+        for (x = z; x > 0 && arr[x] < arr[x-1]; x--)
+        {
+            Swap(arr + x, arr + x - 1);
+        }
+    }
+
+}
+
+// |===========================================================================|
+// |                                Merge Sort                                 |
+// |===========================================================================|
+
+void SortingAlgorithms::MergeSortHelper(int *arr, int lo, int hi)
+{
+    int mid = lo + (hi - lo) / 2, i = lo, j = mid + 1, k = 0;
+    int *aux;
+
+    if (lo >= hi)
+        return;
+
+    // Recursive calls
+    MergeSort(arr, lo, mid);
+    MergeSort(arr, mid + 1, hi);
+
+    aux = new int[hi - lo + 1];
+
+    while (i <= mid || j <= hi)
+    {
+        if (i > mid)
+            aux[k++] = array[j++];
+        else if (j > hi)
+            aux[k++] = array[i++];
+        else if (array[i] < array[j])
+            aux[k++] = array[i++];
+        else
+            aux[k++] = array[j++];
+    }
+    
+    for (i = lo; i <= hi; i++)
+        array[i] = aux[i - lo];
+
+    delete[] aux;    
+}
+
+void SortingAlgorithms::MergeSort()
+{
+    // Recursive call to help with merge sort:
+    MergeSortHelper(arr, 0, count - 1); 
+}
+

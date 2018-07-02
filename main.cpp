@@ -39,8 +39,8 @@ int main(int argc, char **argv)
     //                             Selection Sort
     // =========================================================================
 
-    algorithmObject.Randomize();
     cout << endl << endl;
+    algorithmObject.Randomize();
 
     {
         cout << "Testing Selection Sort " << endl;
@@ -53,19 +53,26 @@ int main(int argc, char **argv)
     else
         cout << "Selection sort failed." << endl;
 
-
     // =========================================================================
     //                             Insertion Sort
     // =========================================================================
 
-    algorithmObject.Randomize();
     cout << endl << endl;
-
+    algorithmObject.Randomize();
     {
         cout << "Testing Insertion Sort " << endl;
         SimpleTimer myTimer("insertion sort");
         algorithmObject.InsertionSort();
     }
+    if (algorithmObject.isSorted())
+        cout << "Insertion sort worked successfully." << endl;
+    else
+        cout << "Insertion sort failed." << endl;
+
+    // =========================================================================
+    //                               Merge Sort
+    // =========================================================================
+
 
     return 0;
 }

@@ -53,6 +53,7 @@ public:
     void RadixSort();
 
     // Best-case, worst-case, average-case: O(n * logn)
+    void MergeSortHelper(int *arr, int lo, int hi); 
     void MergeSort();
 
     // Best-case:
