@@ -1,3 +1,3 @@
 # Sorting-Algorithms
 
-![TEST_IMAGE](/Screenshots/TestOutput.png)
+![TEST_IMAGE](/Screenshots/TestWithQSort.png)
