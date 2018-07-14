@@ -86,5 +86,21 @@ int main(int argc, char **argv)
     else
         cout << "Merge sort failed." << endl;
 
+    // =========================================================================
+    //                               Quick Sort
+    // =========================================================================
+
+    cout << endl << endl;
+    algorithmObject.Randomize();
+    {
+        cout << "Testing Quick Sort..." << endl;
+        SimpleTimer myTimer("quick sort");
+        algorithmObject.QuickSort();
+    }
+    if (algorithmObject.isSorted())
+        cout << "Quick sort worked successfully." << endl;
+    else
+        cout << "Quick sort failed." << endl;
+
     return 0;
 }

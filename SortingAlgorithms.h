@@ -3,6 +3,9 @@
 #include <iostream>
 using namespace std;
 
+// Insertion sort: use binary search for the second part of insertion sort
+
+
 class SortingAlgorithms
 {
 private:
@@ -24,19 +27,19 @@ public:
     void PrintList();
 
 /*
-    |--------------------------------------------------------------------------|
-    |                        Sorting Algorithms Breakdown                      |
-    |--------------------------------------------------------------------------|
-    | Sorting algorithm | Best-case | Worst-case | Average case |Space Compexity
-    ----------------------------------------------------------------------------
-    |    Bubble Sort    |   O(n)    |   O(n^2)   |    O(n^2)    |    O(1)      |
-    |  Insertion Sort   |   O(n)    |   O(n^2)   |    O(n^2)    |    O(1)      |
-    |  Selection Sort   |  O(n^2)   |   O(n^2)   |    O(n^2)    |    O(1)      |
-    |   Bucket Sort     | O(n + k)  |   O(n^2)   |   O(n + k)   |    O(n)      |
-    |    Radix Sort     |   O(nk)   |   O(nk)    |    O(nk)     |  O(n + k)    |
-    |    Merge Sort     | O(nlogn)  |  O(nlogn)  |   O(nlogn)   |    O(n)      |
-    |    Quick Sort     | O(nlogn)  |   O(n^2)   |   O(nlogn)   |   O(logn)    |
-    |--------------------------------------------------------------------------|
+|---------------------------------------------------------------------------|
+|                        Sorting Algorithms Breakdown                       |
+|-------------------------------------------------------------------------=-|
+| Sorting algorithm | Best-case | Worst-case | Average case |Space Compexity|
+----------------------------------------------------------------------------|
+|    Bubble Sort    |   O(n)    |   O(n^2)   |    O(n^2)    |     O(1)      |
+|  Insertion Sort   |   O(n)    |   O(n^2)   |    O(n^2)    |     O(1)      |
+|  Selection Sort   |  O(n^2)   |   O(n^2)   |    O(n^2)    |     O(1)      |
+|   Bucket Sort     | O(n + k)  |   O(n^2)   |   O(n + k)   |     O(n)      |
+|    Radix Sort     |   O(nk)   |   O(nk)    |    O(nk)     |   O(n + k)    |
+|    Merge Sort     | O(nlogn)  |  O(nlogn)  |   O(nlogn)   |     O(n)      |
+|    Quick Sort     | O(nlogn)  |   O(n^2)   |   O(nlogn)   |    O(logn)    |
+|---------------------------------------------------------------------------|
 */
 
     void Swap(int *a, int *b);
@@ -53,11 +56,15 @@ public:
     void RadixSort();
 
     // Best-case, worst-case, average-case: O(n * logn)
-    void MergeSortHelper(int *arr, int lo, int hi); 
+    void MergeSortHelper(int *arr, int lo, int hi);
     void MergeSort();
 
-    // Best-case:
+    // Best-case, average-case: O(nlogn), worst-case: O(n^2)
     void QuickSort();
+    int PartitionArray(int *arr, int lo, int hi);
+    void QuickSortHelper(int *arr, int lo, int hi);
+
+    //
 
     // The below function is a general function that clears the array if it's
     // got stuff in it and then gives in random values to the array.

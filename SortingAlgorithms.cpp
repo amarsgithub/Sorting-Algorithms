@@ -158,6 +158,7 @@ void SortingAlgorithms::InsertionSort()
 // |                                Merge Sort                                 |
 // |===========================================================================|
 
+
 void SortingAlgorithms::MergeSortHelper(int *arr, int lo, int hi)
 {
     int mid = lo + (hi - lo) / 2, i = lo, j = mid + 1, k = 0;
@@ -194,4 +195,40 @@ void SortingAlgorithms::MergeSort()
 {
     // Recursive call to help with merge sort:
     MergeSortHelper(arr, 0, count - 1);
+}
+
+// |===========================================================================|
+// |                                Quick Sort                                 |
+// |===========================================================================|
+
+int SortingAlgorithms::PartitionArray(int *arr, int lo, int hi)
+{
+    int pivot = arr[hi];
+    int i = (lo - 1);
+
+    for (int j = lo; j <= hi - 1; j++)
+    {
+        if (arr[j] <= pivot)
+        {
+            i++;
+            Swap(&arr[i], &arr[j]);
+        }
+    }
+    Swap(&arr[i + 1], &arr[hi]);
+    return (i + 1);
+}
+
+void SortingAlgorithms::QuickSortHelper(int *arr, int lo, int hi)
+{
+    if (lo < hi)
+    {
+        int mid = PartitionArray(arr, lo, hi);
+        QuickSortHelper(arr, lo, mid - 1);
+        QuickSortHelper(arr, mid + 1, hi);
+    }
+}
+
+void SortingAlgorithms::QuickSort()
+{
+    QuickSortHelper(arr, 0, count - 1);
 }
