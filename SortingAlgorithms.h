@@ -66,6 +66,11 @@ public:
 
     //
 
+    void ShellSort();
+    int ShellSortHelper(int arr[], int n);
+
+
+
     // The below function is a general function that clears the array if it's
     // got stuff in it and then gives in random values to the array.
     void randomize(int numElements);
